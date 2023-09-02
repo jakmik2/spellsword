@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bkgadiynlaj11"
-path="res://.godot/imported/Warrior.obj-1287b9387a820c4b4f06cda95b76cac7.scn"
+path="res://.godot/imported/Warrior.obj-d14b61a58a8cf966d14f2c3ecf97a6fc.scn"
 
 [deps]
 
-source_file="res://assets/models/models/Warrior.obj"
-dest_files=["res://.godot/imported/Warrior.obj-1287b9387a820c4b4f06cda95b76cac7.scn"]
+source_file="res://assets/models/retro/Warrior.obj"
+dest_files=["res://.godot/imported/Warrior.obj-d14b61a58a8cf966d14f2c3ecf97a6fc.scn"]
 
 [params]
 

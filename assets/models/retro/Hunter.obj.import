@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ypl0xnswyqmy"
-path="res://.godot/imported/Wizard.obj-3ee1d4dfe7066cf4adc78033546c4491.scn"
+uid="uid://dmptlo67r4ag6"
+path="res://.godot/imported/Hunter.obj-31115ea11a9a3a7d40c4fd87a45f3817.scn"
 
 [deps]
 
-source_file="res://assets/models/models/Wizard.obj"
-dest_files=["res://.godot/imported/Wizard.obj-3ee1d4dfe7066cf4adc78033546c4491.scn"]
+source_file="res://assets/models/retro/Hunter.obj"
+dest_files=["res://.godot/imported/Hunter.obj-31115ea11a9a3a7d40c4fd87a45f3817.scn"]
 
 [params]
 

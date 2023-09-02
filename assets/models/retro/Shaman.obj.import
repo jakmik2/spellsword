@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dkvpbxtumsjab"
-path="res://.godot/imported/Paladin.obj-60a026f4323eb20555ec2b61ba8df95e.scn"
+uid="uid://ca846f30cmb3"
+path="res://.godot/imported/Shaman.obj-3efd299ed7ccaab98c79d024d5f1f564.scn"
 
 [deps]
 
-source_file="res://assets/models/models/Paladin.obj"
-dest_files=["res://.godot/imported/Paladin.obj-60a026f4323eb20555ec2b61ba8df95e.scn"]
+source_file="res://assets/models/retro/Shaman.obj"
+dest_files=["res://.godot/imported/Shaman.obj-3efd299ed7ccaab98c79d024d5f1f564.scn"]
 
 [params]
 

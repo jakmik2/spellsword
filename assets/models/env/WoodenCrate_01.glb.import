@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c3q8hid5ilug0"
-path="res://.godot/imported/Assassin.obj-d3424b80d56f0c412c79e4c7892da0be.scn"
+uid="uid://bnebcado157xx"
+path="res://.godot/imported/WoodenCrate_01.glb-67645370e72f36cbd8fd57711fc8d748.scn"
 
 [deps]
 
-source_file="res://assets/models/models/Assassin.obj"
-dest_files=["res://.godot/imported/Assassin.obj-d3424b80d56f0c412c79e4c7892da0be.scn"]
+source_file="res://assets/models/env/WoodenCrate_01.glb"
+dest_files=["res://.godot/imported/WoodenCrate_01.glb-67645370e72f36cbd8fd57711fc8d748.scn"]
 
 [params]
 
