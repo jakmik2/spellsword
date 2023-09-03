@@ -11,6 +11,8 @@ public partial class Player : CharacterBody3D
 	private Node3D Neck { get; set; }
 	private Node3D Camera { get; set; }
 	private Node3D Hand { get; set; }
+	private Weapon Weapon { get; set; } 
+
 	private AnimationPlayer AnimationPlayer { get; set; }
 
     public override void _Ready()
@@ -19,17 +21,19 @@ public partial class Player : CharacterBody3D
 		Neck = GetNode<Node3D>("Neck");
 		Camera = GetNode<Node3D>("Neck/Camera3D");
 		Hand = Camera.GetNode<Node3D>("Hand");
+		// TODO : Handle which weapon is equipped separately
+		Weapon = Hand.GetChild<Weapon>(0);
     }
 
     public override async void _Process(double delta)
     {
         if (Input.IsActionJustPressed("attack"))
 		{
-			Sword weapon = Hand.GetChild<Sword>(0);
-			weapon.SetHurtboxDisabled(false);
-            AnimationPlayer.Play("sword_swing");
+			Weapon.SetHurtboxDisabled(false);
+			GD.Print("Animation Name: " + Weapon.GetAnimationName());
+            AnimationPlayer.Play(Weapon.GetAnimationName());
 			await ToSignal(AnimationPlayer, "animation_finished");
-            weapon.SetHurtboxDisabled(true);
+            Weapon.SetHurtboxDisabled(true);
         }
     }
 

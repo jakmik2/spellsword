@@ -43,6 +43,21 @@ points = PackedVector3Array(0.00541879, 0.00541884, 0.0058, -0.00549995, -0.0055
 [sub_resource type="BoxShape3D" id="BoxShape3D_30l41"]
 size = Vector3(1.19, 1.19, 1.19)
 
+[sub_resource type="Animation" id="Animation_xir88"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_ew0j3"]
 resource_name = "explode"
 length = 0.3
@@ -59,21 +74,6 @@ tracks/0/keys = {
 "values": [Vector3(1, 1, 1), Vector3(0.62, 1.075, 0.655), Vector3(1.405, 0.27, 1.435), Vector3(0.125, 0.125, 0.145)]
 }
 
-[sub_resource type="Animation" id="Animation_xir88"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.625, 1.075, 0.63)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ocbph"]
 _data = {
 "RESET": SubResource("Animation_xir88"),
@@ -81,7 +81,6 @@ _data = {
 }
 
 [node name="Crate" type="RigidBody3D"]
-transform = Transform3D(0.625, 0, 0, 0, 1.075, 0, 0, 0, 0.63, 0, 0, 0)
 collision_layer = 2
 collision_mask = 7
 
