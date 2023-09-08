@@ -1,17 +1,76 @@
-[gd_scene load_steps=5 format=3 uid="uid://berkjwnxmf6d0"]
+[gd_scene load_steps=7 format=3 uid="uid://berkjwnxmf6d0"]
 
-[ext_resource type="PackedScene" uid="uid://bkgadiynlaj11" path="res://assets/models/models/Warrior.obj" id="1_4p5gb"]
 [ext_resource type="Script" path="res://scripts/Player.cs" id="1_5vgy6"]
-[ext_resource type="Script" path="res://scripts/Camera3D.cs" id="3_f4tyh"]
+[ext_resource type="PackedScene" uid="uid://dbt7op8rep6p2" path="res://scenes/weapons/sword.tscn" id="2_p4hv3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_y44h4"]
-radius = 0.27
+radius = 0.925
+height = 2.82
+
+[sub_resource type="Animation" id="Animation_cg3yb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Neck/Camera3D/Hand:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(3.48787e-16, -3.14159, 3.48787e-16)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Neck/Camera3D/Hand:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.622273, -0.554353, -0.852687)]
+}
+
+[sub_resource type="Animation" id="Animation_jhynn"]
+resource_name = "sword_swing"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Neck/Camera3D/Hand:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(3.48787e-16, -3.14159, 3.48787e-16), Vector3(0.378796, -1.94658, 1.39236), Vector3(-0.0336829, -0.544491, 0.902781), Vector3(3.48787e-16, -3.14159, 3.48787e-16)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Neck/Camera3D/Hand:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.622273, -0.554353, -0.852687), Vector3(0.256, -0.450331, -1.01), Vector3(-1.32516, -0.573973, -0.425529), Vector3(0.622273, -0.554353, -0.852687)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xn420"]
+_data = {
+"RESET": SubResource("Animation_cg3yb"),
+"sword_swing": SubResource("Animation_jhynn")
+}
 
 [node name="Player" type="CharacterBody3D"]
+collision_mask = 6
 script = ExtResource("1_5vgy6")
-
-[node name="Warrior" parent="." instance=ExtResource("1_4p5gb")]
-transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, -0.00723881, 0.0104752, -0.0167704)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_y44h4")
@@ -21,4 +80,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.554353, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Neck"]
 transform = Transform3D(-1, 3.48787e-16, 8.74228e-08, 3.48787e-16, 1, -3.48787e-16, -8.74228e-08, -3.48787e-16, -1, 0, 0, 0)
-script = ExtResource("3_f4tyh")
+
+[node name="Hand" type="Node3D" parent="Neck/Camera3D"]
+transform = Transform3D(-1, 3.48786e-16, -2.53518e-06, 3.48787e-16, 1, -3.48787e-16, 2.53518e-06, -3.48788e-16, -1, 0.622273, -0.554353, -0.852687)
+
+[node name="Sword" parent="Neck/Camera3D/Hand" instance=ExtResource("2_p4hv3")]
+transform = Transform3D(0.0875, 1.30385e-08, -0.151554, 0, 0.175, -1.21072e-08, 0.151554, 0, 0.0875, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xn420")
+}
